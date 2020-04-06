@@ -1,5 +1,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
+const api = require("./utils/api");
+const markDown = require("./utils/generateMarkdown");
 // this var holds all questions prompts and writes answers to the index.js
 const questions = [
     inquirer.prompt([{
