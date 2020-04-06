@@ -8,17 +8,8 @@ const questions = [
         type: "input",
         message: "What is your Github username?",
         name: "username"
-    },
-    {
-        type: "input",
-        message: "Where are you located?",
-        name: "location"
-    },
-    {
-        type: "input",
-        message: "What is your email address?",
-        name: "email"
     }]).then(answers => {
+        // answers is a variable that holds new html elements. Uses template literals with dot notation to insert user input 
         const bioAnswers = `
        <div>
        <p>
@@ -28,6 +19,7 @@ const questions = [
        </p>
     </div>
   `;
+        // within main code block, index.html is created and the html elements and contents are inserted via bioanswers variable
         fs.writeFile("index.html", bioAnswers, () => console.log("File written"));
     }),
 ];
@@ -40,3 +32,28 @@ function init() {
 }
 
 init();
+// sample axios call grabbed from Day 3 activity 29
+// inquirer
+//   .prompt({
+//     message: "Enter your GitHub username:",
+//     name: "username"
+//   })
+//   .then(function({ username }) {
+//     const queryUrl = `https://api.github.com/users/${username}/repos?per_page=100`;
+
+//     axios.get(queryUrl).then(function(res) {
+//       const repoNames = res.data.map(function(repo) {
+//         return repo.name;
+//       });
+
+//       const repoNamesStr = repoNames.join("\n");
+
+//       fs.writeFile("repos.txt", repoNamesStr, function(err) {
+//         if (err) {
+//           throw err;
+//         }
+
+//         console.log(`Saved ${repoNames.length} repos`);
+//       });
+//     });
+//   });
