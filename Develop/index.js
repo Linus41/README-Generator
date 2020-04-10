@@ -53,7 +53,7 @@ inquirer
     .then(function (answers) {
         console.log(answers);
         let data = {...answers}
-        const queryUrl = `https://api.github.com/users/${data.username}?access_token=0522d8b8fbe535ccf73858e255321a8a37f0716b`;
+        const queryUrl = `https://api.github.com/users/${data.username}`;
 
         axios.get(queryUrl).then(function (res) {
             console.log(res.data);
@@ -78,8 +78,16 @@ inquirer
         </div>
         <p id='installation'>
         <h1>Installation: </h1>${data.installation}</p>
-        <h1></h1>
-        <h1></h1>
+        <p id='usage'>
+        <h1>Usage: </h1>${data.usage}</p>
+        <p id='license'>
+        <h1>License: </h1>${data.license}</p>
+        <p id='contributing'>
+        <h1>Contributers: </h1>${data.contributing}</p>
+        <p id='tests'>
+        <h1>Tests: </h1>${data.tests}</p>
+        <p id='questions'>
+        <h1>Questions: </h1>${data.questions}</p>
         </div>`;
         // make prompt to ask a series of questions and store user responses
         // make function that generates html? 
