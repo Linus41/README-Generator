@@ -69,13 +69,11 @@ inquirer
         <div>Table of Contents
             <ol>
                 <li><a href="#installation">Installation</a></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li><a href="#usage">Usage</a></li>
+                <li><a href="#license">License</a></li>
+                <li><a href="#contributing">Contributers</a></li>
+                <li><a href="#tests">Tests</a></li>
+                <li><a href="#questions">Questions</a></li>
             </ol>
         </div>
         <p id='installation'>
