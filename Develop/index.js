@@ -60,54 +60,31 @@ inquirer
             const email = res.data.email;
             console.log(email);
             const image = res.data.avatar_url;
-            const infoToHTML = `
-        <!DOCTYPE html>
-        <head></head>
-        <body>
-        <div>
-        <img class="bio-image" style="width:400px;height:500px;" src="${image}">
-        <p class="email" style="font-size: 24px;">${email}</p>
-        <h1>${data.title}</h1>
-        <p>${data.description}</p>
-        <div>Table of Contents
-            <ol>
-                <li><a href="#installation">Installation</a></li>
-                <li><a href="#usage">Usage</a></li>
-                <li><a href="#license">License</a></li>
-                <li><a href="#contributing">Contributers</a></li>
-                <li><a href="#tests">Tests</a></li>
-                <li><a href="#questions">Questions</a></li>
-            </ol>
-        </div>
-        <p id='installation'>
-        <h1>Installation: </h1>${data.installation}</p>
-        <p id='usage'>
-        <h1>Usage: </h1>${data.usage}</p>
-        <p id='license'>
-        <h1>License: </h1>${data.license}</p>
-        <p id='contributing'>
-        <h1>Contributers: </h1>${data.contributing}</p>
-        <p id='tests'>
-        <h1>Tests: </h1>${data.tests}</p>
-        <p id='questions'>
-        <h1>Questions: </h1>${data.questions}</p>
-        </div>
-        </body>
-        </html>`;
-            // make prompt to ask a series of questions and store user responses
-            // make function that generates html? 
+            const infoToREADME = `
+        # Unit 09 Node.js and ES6+ Homework: Good README Generator
+        // not rendering img
+        ${image}
+        // email still null
+        ${email}
 
-            fs.writeFile("index.html", infoToHTML, function (err) {
-                if (err) {
-                    throw err;
-                }
+        * Title: ${data.title}
+        * Description: ${data.description}
+        * Installation: ${data.installation}
+        * Usage: ${data.usage}
+        * License: ${data.license}
+        * Contributers: ${data.contributing}
+        * Tests: ${data.tests}
+        * Questions: ${data.questions}`;
 
-            })
-            fs.writeFile("README.md", infoToHTML, function (err) {
-                if (err) {
-                    throw err;
-                }
-            })
+        fs.writeFile("README.md", infoToREADME, function (err) {
+            if (err) {
+                throw err;
+            }
+
+        })
         });
-
-    });
+        
+    })
+        
+            
+        
