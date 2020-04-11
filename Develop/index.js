@@ -59,33 +59,49 @@ inquirer
             console.log(res.data);
             const email = res.data.email;
             console.log(email);
+            const image = res.data.avatar_url;
             // const image = "https://avatars1.githubusercontent.com/u/59541141?v=4";
             // const badge = `https://img.shields.io/badge/2020-green`;
             const infoToREADME = `
-        # Unit 09 Node.js and ES6+ Homework: Good README Generator
-        
-        ![picture of Linus Schief](https://avatars1.githubusercontent.com/u/59541141?v=4)
-        
-        ${email}
-        ![picture of badge](https://img.shields.io/badge/2020-green) 
-        * Title: ${data.title}
-        * Description: ${data.description}
-        * Table of Contents: 
-        * Installation: ${data.installation}
-        * Usage: ${data.usage}
-        * License: ${data.license}
-        * Contributers: ${data.contributing}
-        * Tests: ${data.tests}
-        * Questions: ${data.questions}`;
+# Unit 09 Node.js and ES6+ Homework: Good README Generator
+
+![picture of Linus Schief](${image})
+
+${email}
+
+![picture of badge](https://img.shields.io/badge/2020-green) 
+
+# Title: ${data.title}
+
+## Description: ${data.description}
+
+## Table of Contents: 
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributers](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
+
+### Installation: ${data.installation}
+
+### Usage: ${data.usage}
+
+### License: ${data.license}
+
+### Contributers: ${data.contributing}
+
+### Tests: ${data.tests}
+
+### Questions: ${data.questions}`;
 
             fs.writeFile("README.md", infoToREADME, function (err) {
                 if (err) {
                     throw err;
                 }
-
             })
         });
-
     })
 
 
