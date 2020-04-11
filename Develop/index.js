@@ -52,7 +52,7 @@ inquirer
 
     .then(function (answers) {
         console.log(answers);
-        let data = {...answers}
+        let data = { ...answers }
         const queryUrl = `https://api.github.com/users/${data.username}`;
 
         axios.get(queryUrl).then(function (res) {
@@ -61,6 +61,9 @@ inquirer
             console.log(email);
             const image = res.data.avatar_url;
             const infoToHTML = `
+        <!DOCTYPE html>
+        <head></head>
+        <body>
         <div>
         <img class="bio-image" style="width:400px;height:500px;" src="${image}">
         <p class="email" style="font-size: 24px;">${email}</p>
@@ -88,9 +91,11 @@ inquirer
         <h1>Tests: </h1>${data.tests}</p>
         <p id='questions'>
         <h1>Questions: </h1>${data.questions}</p>
-        </div>`;
-        // make prompt to ask a series of questions and store user responses
-        // make function that generates html? 
+        </div>
+        </body>
+        </html>`;
+            // make prompt to ask a series of questions and store user responses
+            // make function that generates html? 
 
             fs.writeFile("index.html", infoToHTML, function (err) {
                 if (err) {
@@ -98,6 +103,11 @@ inquirer
                 }
 
             })
+            fs.writeFile("README.md", infoToHTML, function (err) {
+                if (err) {
+                    throw err;
+                }
+            })
         });
-        
+
     });
