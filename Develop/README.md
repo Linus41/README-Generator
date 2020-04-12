@@ -7,9 +7,9 @@ null
 
 ![picture of badge](https://img.shields.io/badge/2020-green) 
 
-# Title: 
+# Title: Good README Generator
 
-## Description: 
+## Description: Create a command-line application that dynamically generates a README.md from a user's input
 
 ## Table of Contents: 
 
@@ -20,13 +20,13 @@ null
 - [Tests](#tests)
 - [Questions](#questions)
 
-### Installation: 
+### Installation: Inquirer, NPM, Axios
 
-### Usage: 
+### Usage: Node.js
 
-### License: 
+### License: Open-source
 
-### Contributers: 
+### Contributers: Linus Schief, Namita Shenai
 
 ### Tests: 
 

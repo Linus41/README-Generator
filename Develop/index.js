@@ -53,6 +53,7 @@ inquirer
     .then(function (answers) {
         console.log(answers);
         let data = { ...answers }
+        const accessToken = process.env.accessToken;
         const queryUrl = `https://api.github.com/users/${data.username}`;
 
         axios.get(queryUrl).then(function (res) {
@@ -60,8 +61,6 @@ inquirer
             const email = res.data.email;
             console.log(email);
             const image = res.data.avatar_url;
-            // const image = "https://avatars1.githubusercontent.com/u/59541141?v=4";
-            // const badge = `https://img.shields.io/badge/2020-green`;
             const infoToREADME = `
 # Unit 09 Node.js and ES6+ Homework: Good README Generator
 
